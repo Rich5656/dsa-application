@@ -47,3 +47,14 @@
   align-items: center;
   width: 50%
 }
+
+.code-section {
+  background-color: grey;
+  position: relative;
+  left: 0px;
+  /* justify-content: left; */
+  padding: 10px;
+}
+.code-display {
+  color: azure;
+}

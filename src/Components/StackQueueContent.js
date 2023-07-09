@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const StackQueueContent = ({ 
-  satckOpitons, stack, queueOptions, queue, handleStackPush, handleStackPop, handleQueuePop, handleQueuePush 
+  stackOptions, stack, queueOptions, queue, handleStackPush, handleStackPop, handleQueuePop, handleQueuePush 
 }) => {
   return (
     <>
@@ -18,7 +18,8 @@ export const StackQueueContent = ({
             the item that is at the top of the stack. It also means that when you push items to the stack, the new item will be placed at
             the top. Play around with the demo bellow to get a feel for how this works! 
         </p>
-        <section className='dsa-demo-section'>
+      
+      {/* give this its own component */}
           <div className='interactive-buttons'>
             <button id='add-stack' onClick={handleStackPush}>
               Push to stack
@@ -27,30 +28,42 @@ export const StackQueueContent = ({
               Pop from stack
             </button>
           </div>
-          <div className='stack-demo'>
-            {stack.toReversed().map(item => <div>{item}</div>)}
+          <div className="code-section display-text-body">        
+            <code className='code-display'>
+              {`// items ready to be pushed [${stackOptions.toReversed()}]`} <br />
+              {`const stack = [${stack}]`} <br />
+              {'// code to push to the stack:'} <br />
+              {'stack.push()'} <br />
+              {'// code when you pop from the stack (remove last element of array):'} <br />
+              {'stack.pop()'} <br />
+            </code>
           </div>
 
+          {/* <div className='stack-demo'>
+            {stack.toReversed().map(item => <div>{item}</div>)}
+          </div> */}
+          {/* give this its own component */}
           <div className="interactive-buttons">
             <button id='add-queue' onClick={handleQueuePush}>
-              Push to stack
+              Push to queue
             </button>
             <button id='remove-queue' onClick={handleQueuePop}>
-              Pop from stack
+              Pop from queue
             </button>
           </div>
-          <div className="queue-demo">
-            {queue.map(item => <div>{item}</div>)}
+          <div className="code-section display-text-body">        
+            <code className='code-display'>
+              {`// items ready to be pushed [${queueOptions.toReversed()}]`} <br />
+              {`const queue = [${queue}]`} <br />
+              {'// code to push to the queue:'} <br />
+              {'queue.push()'} <br />
+              {'// code to pop from the queue (remove first element of array):'} <br />
+              {'queue.shift()'} <br />
+            </code>
           </div>
-          <code>
-            {`const queue = []`} <br />
-            {'more code '} <br />
-            {'more code '} <br />
-          </code>
-
-
-
-        </section>
+          {/* <div className="queue-demo">
+            {queue.toReversed().map(item => <div>{item}</div>)}
+          </div> */}  
     </>
   )
 }
