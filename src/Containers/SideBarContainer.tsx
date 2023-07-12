@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { SideBar } from '../Components/SideBar'
 
-export const SideBarContainer = ({ handleDisplaySelection }) => {
+interface SideBarContainterProps {
+  handleDisplaySelection: () => void;
+}
+
+export const SideBarContainer = ({ handleDisplaySelection }: SideBarContainterProps) => {
   const [ sideBarActive, setSideBarActive ] = useState(false);
 
   const handleSideBarToggle = () => {

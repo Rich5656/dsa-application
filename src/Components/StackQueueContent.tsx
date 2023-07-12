@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {FC, ReactElement} from 'react'
 
-export const StackQueueContent = ({ 
+interface StackQueueContentProps {
+  stackOptions: string[];
+  stack: string[];
+  queueOptions: string[];
+  queue: string[];
+  handleStackPush: () => void;
+  handleStackPop: () => void;
+  handleQueuePop: () => void;
+  handleQueuePush: () => void;
+}
+
+export const StackQueueContent: FC<StackQueueContentProps> = ({ 
   stackOptions, stack, queueOptions, queue, handleStackPush, handleStackPop, handleQueuePop, handleQueuePush 
-}) => {
+}: StackQueueContentProps): ReactElement => {
   return (
     <>
         <h1 className='display-title'>Stacks and Queues</h1>
@@ -30,7 +41,7 @@ export const StackQueueContent = ({
           </div>
           <div className="code-section display-text-body">        
             <code className='code-display'>
-              {`// items ready to be pushed [${stackOptions.toReversed()}]`} <br />
+              {`// items ready to be pushed [${stackOptions}]`} <br />
               {`const stack = [${stack}]`} <br />
               {'// code to push to the stack:'} <br />
               {'stack.push()'} <br />
@@ -53,7 +64,7 @@ export const StackQueueContent = ({
           </div>
           <div className="code-section display-text-body">        
             <code className='code-display'>
-              {`// items ready to be pushed [${queueOptions.toReversed()}]`} <br />
+              {`// items ready to be pushed [${queueOptions}]`} <br />
               {`const queue = [${queue}]`} <br />
               {'// code to push to the queue:'} <br />
               {'queue.push()'} <br />

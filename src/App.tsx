@@ -1,12 +1,13 @@
 import './App.css';
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { SideBarContainer } from './Containers/SideBarContainer';
 import { DisplayArea } from './Components/DisplayArea';
 
-function App() {
+
+const App: FC = () => {
   const [ displaySelection, setDisplaySection ] = useState('home');
 
-  const handleDisplaySelection = (event) => {
+  const handleDisplaySelection: any = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDisplaySection(event.target.id)
   }
 

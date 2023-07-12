@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import {FC,  ReactElement,  useState } from 'react'
 import { StackQueueContent } from '../Components/StackQueueContent'
 
-export const StackQueueContainer = () => {
-  const [ stackOptions, setStackOptions ] = useState(['d' ,'c', 'b', 'a'])
-  const [ stack, setStack ] = useState([]);
-  const [ queueOptions, setQueueOptions ] = useState(['d' ,'c', 'b', 'a'])
-  const [ queue, setQueue ] = useState([]);
+
+export const StackQueueContainer: FC = (): ReactElement => {
+  const [ stackOptions, setStackOptions ] = useState<string[] | never[]>(['a' ,'b', 'c', 'd'])
+  const [ stack, setStack ] = useState<string[] | never[]>([]);
+  const [ queueOptions, setQueueOptions ] = useState<string[] | never[]>(['a' ,'b', 'c', 'd'])
+  const [ queue, setQueue ] = useState<string[] | never[]>([]);
 
 
   const handleQueuePush = () => {
     setQueueOptions(prevState => {
-        const currentOption = prevState.pop();
+        const currentOption = prevState.shift();
         
         setQueue(prevState => {
             if (currentOption === undefined) {
@@ -31,7 +32,7 @@ export const StackQueueContainer = () => {
             if (currentOption === undefined) {
                 return [...prevState];
             } 
-            return [currentOption, ...prevState];
+            return [...prevState, currentOption];
         });
 
         return [...prevState];
@@ -40,7 +41,7 @@ export const StackQueueContainer = () => {
 
   const handleStackPush = () => {
     setStackOptions(prevState => {
-        const currentOption = prevState.pop();
+        const currentOption = prevState.shift();
 
         setStack(prevState => {
             if (currentOption === undefined) {
@@ -61,7 +62,7 @@ export const StackQueueContainer = () => {
             if (currentOption === undefined) {
                 return [...prevState];
             } 
-            return [...prevState, currentOption];
+            return [currentOption, ...prevState];
         });
 
         return [...prevState];

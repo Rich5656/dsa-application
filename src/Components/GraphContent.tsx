@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export const GraphContent = () => {
+export const GraphContent: FC = () => {
   return (
     <>
         <h1 className='display-title'>Graphs</h1>

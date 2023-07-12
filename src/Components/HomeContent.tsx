@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export const HomeContent = () => {
+export const HomeContent: FC = () => {
   return (
     <>
       <h1 className='display-title'>Home</h1>

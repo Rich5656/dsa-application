@@ -58,3 +58,7 @@
 .code-display {
   color: azure;
 }
+
+.multiline {
+  white-space: pre-wrap;
+}
