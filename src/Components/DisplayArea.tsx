@@ -26,8 +26,8 @@ export const DisplayArea: FC<DisplayAreaProps> = ({ displaySelection }: DisplayA
     }
 
   return (
-    <div className='display-area'>
+    <main className='display-area'>
         {components[displaySelection as keyof Components]}
-    </div>
+    </main>
   )
 }

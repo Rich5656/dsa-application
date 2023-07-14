@@ -15,15 +15,18 @@ export const SideBar: FC<SideBarProps> = ({ handleSideBarToggle, sideBarActive, 
       </div>
     :
       <>    
-        <div onClick={handleSideBarToggle} className="hamburger-menu">
+        {/* <div onClick={handleSideBarToggle} className="hamburger-menu">
         Menu
-        </div>
-        <div className="sidebar">
+        </div> */}
+        <nav className="sidebar">
+          <div onClick={handleSideBarToggle} className="hamburger-menu">
+          Menu
+          </div>
           <div id='stacksQueues' onClick={handleDisplaySelection} className="sidebar-link">Stacks/Queues</div>
           <div id='linkedLists' onClick={handleDisplaySelection} className="sidebar-link">Linked Lists</div>
           <div id='trees' onClick={handleDisplaySelection} className="sidebar-link">Trees</div>
           <div id='graphs' onClick={handleDisplaySelection} className="sidebar-link">Graphs</div>
-        </div>
+        </nav>
       </>
   )
   

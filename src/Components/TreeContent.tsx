@@ -1,4 +1,5 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
+import { NodeDisplay } from './NodeDisplay'; 
 
 const nodeCreation =  `class Node {
   constructor(value) {
@@ -74,6 +75,7 @@ export const TreeContent: FC = () => {
           {bfs}
         </code>
       </div>
+      <NodeDisplay />
     </>
   )
 }

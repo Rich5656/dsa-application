@@ -12,10 +12,10 @@ const App: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <SideBarContainer handleDisplaySelection={handleDisplaySelection}/>
       <DisplayArea displaySelection={displaySelection} />
-    </div>
+    </>
   );
 }
 
