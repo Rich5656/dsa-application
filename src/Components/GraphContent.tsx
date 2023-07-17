@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 export const GraphContent: FC = () => {
   return (
-    <>
+    <section className='display-area'>
         <h1 className='display-title'>Graphs</h1>
         <p className='display-text-body'>
             Graphs are similar to trees in the way that the are constructed with nodes that connect to other nodes. However, graphs 
@@ -18,6 +18,6 @@ export const GraphContent: FC = () => {
           This is important to undrestand because it creates problems where cycles can exist, so make sure you know what type of graph
           you are dealing with before you begin a traversal. 
         </p>
-    </>
+    </section>
   )
 }

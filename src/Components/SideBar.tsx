@@ -10,14 +10,12 @@ export const SideBar: FC<SideBarProps> = ({ handleSideBarToggle, sideBarActive, 
   console.log(sideBarActive)
   return (
     sideBarActive === false ? 
-      <div onClick={handleSideBarToggle} className="hamburger-menu">
+      <button onClick={handleSideBarToggle} className="hamburger-menu">
         Menu
-      </div>
+      </button>
     :
       <>    
-        {/* <div onClick={handleSideBarToggle} className="hamburger-menu">
-        Menu
-        </div> */}
+      {/* TODO: MAKE SURE THAT NONE OF THE NAV LINKS ARE DIVS!!!! */}
         <nav className="sidebar">
           <div onClick={handleSideBarToggle} className="hamburger-menu">
           Menu
