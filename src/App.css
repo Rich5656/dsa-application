@@ -38,8 +38,14 @@
   align-items: center;
 }
 
+.display-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .display-text-body {
   width: 50%;
+  margin-bottom: 10px;
 }
 
 .dsa-demo-section {
@@ -48,6 +54,13 @@
   justify-content: center;
   align-items: center;
   width: 50%
+}
+
+.interactive-buttons {
+  margin-bottom: 10px;
+}
+.stack-queue-button {
+  margin: 3px;
 }
 
 .code-section {
