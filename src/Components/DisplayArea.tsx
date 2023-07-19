@@ -3,6 +3,7 @@ import { TreeContent } from './TreeContent';
 import { GraphContent } from './GraphContent';
 import { HomeContent } from './HomeContent';
 import { StackQueueContainer } from '../Containers/StackQueueContainer';
+import { TreeContainer } from '../Containers/TreeContainer';
 
 export interface DisplayAreaProps {
   displaySelection: string;
@@ -20,7 +21,7 @@ export const DisplayArea: FC<DisplayAreaProps> = ({ displaySelection }: DisplayA
     const components: Components = {
         home: <HomeContent />,
         stacksQueues: <StackQueueContainer />,
-        trees: <TreeContent />,
+        trees: <TreeContainer />,
         graphs: <GraphContent />,
         linkedLists: null
     }

@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { NodeDisplay } from './NodeDisplay'; 
+import { Node } from '../Containers/TreeContainer';
 
 const nodeCreation =  `class Node {
   constructor(value) {
@@ -47,8 +48,11 @@ const bfs = `const bfs = (rootNode) => {
   }
 } 
 `
+export interface TreeContentProps {
+  rootNode: Node;
+}
 
-export const TreeContent: FC = () => {
+export const TreeContent = ({rootNode}: TreeContentProps) => {
   return (
     <section className='display-area'>
       <h1 className='display-title'>Binary Tree</h1>
@@ -75,7 +79,7 @@ export const TreeContent: FC = () => {
           {bfs}
         </code>
       </figure>
-      <NodeDisplay />
+      <NodeDisplay rootNode={rootNode}/>
     </section>
   )
 }

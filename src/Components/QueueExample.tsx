@@ -11,10 +11,10 @@ export const QueueExample = ({handleQueuePush, handleQueuePop, queue, queueOptio
           <p><strong>Queue Example:</strong></p>
         <div className="interactive-buttons">
           
-          <button id='add-queue' className='stack-queue-button' onClick={handleQueuePush}>
+          <button id='add-queue' className='stack-queue-button button-basic' onClick={handleQueuePush}>
             Push to queue
           </button>
-          <button id='remove-queue' className='stack-queue-button' onClick={handleQueuePop}>
+          <button id='remove-queue' className='stack-queue-button button-basic' onClick={handleQueuePop}>
             Pop from queue
           </button>
         </div>

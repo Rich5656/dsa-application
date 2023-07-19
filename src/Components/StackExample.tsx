@@ -11,10 +11,10 @@ export const StackExample = ({handleStackPush, handleStackPop, stack, stackOptio
     <>
         <p><strong>Stack Example:</strong></p>
         <div className='interactive-buttons'>
-          <button id='add-stack' className='stack-queue-button' onClick={handleStackPush}>
+          <button id='add-stack' className='stack-queue-button button-basic' onClick={handleStackPush}>
             Push to stack
           </button>
-          <button id='remove-stack' className='stack-queue-button' onClick={handleStackPop}>
+          <button id='remove-stack' className='stack-queue-button button-basic' onClick={handleStackPop}>
             Pop from stack
           </button>
         </div>

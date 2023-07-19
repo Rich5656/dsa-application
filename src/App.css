@@ -25,6 +25,10 @@
   justify-content: center;
   align-items: center;
 }
+.button-basic {
+  padding: 3px;
+}
+
 .sidebar-link {
   cursor: pointer;
   margin: 10px;
