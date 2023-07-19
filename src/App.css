@@ -82,20 +82,16 @@
   white-space: pre-wrap;
 }
 
-.node-layer {
-  display: flex;
-  justify-content: center;
-}
-
-.node-edge {
-  margin: 10px 3px;
-  height: 2px;
-  width: 100%;
-  background-color: black;
-  transform: rotate(45deg);
+.node {
+  border-radius: 50px;
 }
 
 * {margin: 0; padding: 0;}
+
+.tree {
+  display: flex;
+  justify-content: center;
+}
 
 .tree ul {
 	padding-top: 20px; position: relative;
@@ -164,17 +160,21 @@ right connector from last child*/
 	width: 0; height: 20px;
 }
 
-.tree li a{
+.tree li div{
+  line-height: 300%;
 	border: 1px solid #ccc;
 	padding: 5px 10px;
+  height: 50px;
+  width: 50px;
 	text-decoration: none;
+  text-align: center;
 	color: #666;
 	font-family: arial, verdana, tahoma;
-	font-size: 11px;
+	font-size: 15px;
 	display: inline-block;
 	
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
 	-moz-border-radius: 5px;
 	
 	transition: all 0.5s;
@@ -184,13 +184,13 @@ right connector from last child*/
 
 /*Time for some hover effects*/
 /*We will apply the hover effect the the lineage of the element also*/
-.tree li a:hover, .tree li a:hover+ul li a {
+.tree li div:hover, .tree li div:hover+ul li div {
 	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
 }
 /*Connector styles on hover*/
-.tree li a:hover+ul li::after, 
-.tree li a:hover+ul li::before, 
-.tree li a:hover+ul::before, 
-.tree li a:hover+ul ul::before{
+.tree li div:hover+ul li::after, 
+.tree li div:hover+ul li::before, 
+.tree li div:hover+ul::before, 
+.tree li div:hover+ul ul::before{
 	border-color:  #94a0b4;
 }

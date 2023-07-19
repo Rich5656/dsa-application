@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 import { Node } from '../Containers/TreeContainer';
 import { TreeContentProps } from './TreeContent';
 
@@ -8,44 +8,30 @@ type NodeDisplayProps = TreeContentProps;
 export const NodeDisplay = ({rootNode}: NodeDisplayProps)  => {
   // perform a DFS to render out all of the nodes
   const dfs = (current: Node | null): JSX.Element => {
+    // base case where the current child is null and nothing should be rendered
+    if (current === null) return <></>;
+
     // base case to return if both children are null
-    if (current?.children[0] === null && current.children[1] === null)  {
+    if (current.children[0] === null && current.children[1] === null)  {
         return (
             <li>
-                <a href="#">{current.value}</a>
+                <div >{current.value}</div>
             </li>
-        )
+        );
     }
 
+    // make a recursive call to keep rendering children nodes
     return(
-            <li>
-                <a href="#">{current?.value}</a>
+            <li className='main-tree-container'>
+                <div className='node'>{current?.value}</div>
                 <ul>
-                    {current?.children.map(node => {
+                    {current.children.map(node => {
                         return dfs(node);
                     })}
                 </ul>
             </li>
-    )
-
-    // const stack: Array<Node | undefined> = [rootNode];
-
-    // while (stack.length) {
-    //     // pop to get current value
-    //     const currNode: Node | undefined = stack.pop();
-    //     console.log(currNode?.value)
-        
-    //     // add to the stack if child values exist
-    //     if (currNode?.leftChild !== null) {
-    //         stack.push(currNode?.leftChild)
-    //     }
-    //     if (currNode?.rightChild !== null) {
-    //         stack.push(currNode?.rightChild)
-    //     }
-    // }
+    );
   }
-
-//   dfs(rootNode);
 
   return (
     <>

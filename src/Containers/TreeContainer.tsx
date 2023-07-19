@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { TreeContent } from '../Components/TreeContent';
 
 export class Node {
@@ -20,12 +20,16 @@ export const TreeContainer = () => {
     const rightNode = new Node(23);
     const node4 = new Node(5);
     const node5 = new Node(16);
+    const node6 = new Node(22);
+    const node7 = new Node(30);
     rootNode.children[0] = leftNode;
     rootNode.children[1] = rightNode;
     leftNode.children[0] = node4;
     leftNode.children[1] = node5;
-    // rootNode.leftChild = leftNode;
-    // rootNode.rightChild = rightNode;  
+    rightNode.children[0] = node6;
+    rightNode.children[1] = node7;
+
+      
   
 
     return (
