@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, MouseEvent } from 'react'
 import { NodeDisplay } from './NodeDisplay'; 
 import { Node } from '../Containers/TreeContainer';
 import { TreeFunctionality } from './TreeFunctionality';
@@ -51,10 +51,12 @@ const bfs = `const bfs = (rootNode) => {
 `
 export interface TreeContentProps {
   rootNode: Node;
-  handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; //TODO dont leave this as any
+  targetFound: boolean;
+  handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
+  handleTreeSearch: (e: MouseEvent<HTMLButtonElement>) => void ;
 }
 
-export const TreeContent = ({rootNode, handleSearchInputChange}: TreeContentProps) => {
+export const TreeContent = ({rootNode, targetFound, handleSearchInputChange, handleTreeSearch}: TreeContentProps) => {
   return (
     <section className='display-area'>
       <h1 className='display-title'>Binary Tree</h1>
@@ -81,8 +83,8 @@ export const TreeContent = ({rootNode, handleSearchInputChange}: TreeContentProp
           {bfs}
         </code>
       </figure>
-      <TreeFunctionality handleSearchInputChange={handleSearchInputChange}/>
-      <NodeDisplay rootNode={rootNode}/>
+      <TreeFunctionality handleSearchInputChange={handleSearchInputChange} handleTreeSearch={handleTreeSearch}/>
+      <NodeDisplay rootNode={rootNode} targetFound={targetFound}/>
     </section>
   )
 }

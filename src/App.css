@@ -216,3 +216,7 @@ right connector from last child*/
 .tree li div:hover+ul ul::before{
 	border-color:  #94a0b4;
 }
+
+.standard {
+  background-color: rgb(255, 194, 80);
+}

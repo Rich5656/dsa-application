@@ -1,16 +1,18 @@
 import React from 'react'
+import {TreeContentProps} from './TreeContent'
+type TreeFunctionalityProps = Partial<TreeContentProps> 
+// {
+//   handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
 
-interface TreeFunctionalityProps {
-  handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // TODO: dont leave this as any!!
-}
-export const TreeFunctionality = ({handleSearchInputChange}: TreeFunctionalityProps) => {
+// }
+export const TreeFunctionality = ({handleSearchInputChange , handleTreeSearch}: TreeFunctionalityProps) => {
   return (
     <div className='tree-functionality'>
         {/* TODO: CHECK IF A NUMBER IS IN TREE */}
         <div className="search-tree">
           Search Number(0-100):
           <input onChange={handleSearchInputChange} defaultValue='20' className='search-tree-input' type="number" max={100} min={0} />
-          <button>Search</button>
+          <button onClick={handleTreeSearch}>Search</button>
         </div>
         {/* TODO: DFS ILLUSTRATION */}
         <div className="dfs-bfs-tree">
