@@ -2,7 +2,9 @@ import React from 'react';
 import { Node } from '../Containers/TreeContainer';
 import { TreeContentProps } from './TreeContent';
 
-type NodeDisplayProps = TreeContentProps;
+interface NodeDisplayProps {
+    rootNode: Node;
+};
 
 
 export const NodeDisplay = ({rootNode}: NodeDisplayProps)  => {

@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { NodeDisplay } from './NodeDisplay'; 
 import { Node } from '../Containers/TreeContainer';
+import { TreeFunctionality } from './TreeFunctionality';
 
 const nodeCreation =  `class Node {
   constructor(value) {
@@ -50,9 +51,10 @@ const bfs = `const bfs = (rootNode) => {
 `
 export interface TreeContentProps {
   rootNode: Node;
+  handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; //TODO dont leave this as any
 }
 
-export const TreeContent = ({rootNode}: TreeContentProps) => {
+export const TreeContent = ({rootNode, handleSearchInputChange}: TreeContentProps) => {
   return (
     <section className='display-area'>
       <h1 className='display-title'>Binary Tree</h1>
@@ -79,6 +81,7 @@ export const TreeContent = ({rootNode}: TreeContentProps) => {
           {bfs}
         </code>
       </figure>
+      <TreeFunctionality handleSearchInputChange={handleSearchInputChange}/>
       <NodeDisplay rootNode={rootNode}/>
     </section>
   )

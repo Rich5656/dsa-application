@@ -82,6 +82,27 @@
   white-space: pre-wrap;
 }
 
+
+
+.tree-functionality {
+  display: flex;
+  background-color: lightgray;
+  width: 50%;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+.dfs-bfs-tree {
+  position: relative;
+  left: 50%;
+}
+
+.dfs-bfs-tree button {
+  padding: 15%;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
 .node {
   border-radius: 50px;
 }
@@ -91,6 +112,7 @@
 .tree {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .tree ul {

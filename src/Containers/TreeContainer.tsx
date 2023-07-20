@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TreeContent } from '../Components/TreeContent';
 
 export class Node {
@@ -29,10 +29,20 @@ export const TreeContainer = () => {
     rightNode.children[0] = node6;
     rightNode.children[1] = node7;
 
-      
+    const [treeSearchInput, setTreeSearchInput] = useState<number>()
+    console.log(treeSearchInput)
+
+    // TODO: dont leave this typed as any!!!
+    const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        setTreeSearchInput(Number(e.target.value));
+    };
+
+    const handleTreeSearch = (): void => {
+
+    };
   
 
     return (
-        <TreeContent rootNode={rootNode} />
+        <TreeContent rootNode={rootNode} handleSearchInputChange={handleSearchInputChange}/>
     )
 }
