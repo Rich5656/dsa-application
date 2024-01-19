@@ -1,10 +1,5 @@
 import { FC } from 'react'
-
-interface SideBarProps {
-  handleSideBarToggle: () => void;
-  sideBarActive: boolean;
-  handleDisplaySelection: () => void;
-}
+import { SideBarProps } from '../Common/types';
 
 export const SideBar: FC<SideBarProps> = ({ handleSideBarToggle, sideBarActive, handleDisplaySelection }: SideBarProps) => {
   console.log(sideBarActive)

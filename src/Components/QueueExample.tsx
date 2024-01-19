@@ -1,10 +1,8 @@
 import React  from 'react';
-import { StackQueueContentProps } from './StackQueueContent';
-
-type QueueExampleProps = Partial<StackQueueContentProps>;
+import { QueueExampleProps } from '../Common/types';
 
 export const QueueExample = ({handleQueuePush, handleQueuePop, queue, queueOptions}: QueueExampleProps)  => {
-    const queueCode = `// items ready to be pushed [${queueOptions}] \nconst queue = [${queue}] \n\n// code to push to the queue:\nqueue.push()\n\n// code when you pop from the queue (remove last element of array):\nqueue.pop()`
+  const queueCode = `// items ready to be pushed [${queueOptions}] \nconst queue = [${queue}] \n\n// code to push to the queue:\nqueue.push()\n\n// code when you pop from the queue (remove last element of array):\nqueue.pop()`
 
     return (
       <>

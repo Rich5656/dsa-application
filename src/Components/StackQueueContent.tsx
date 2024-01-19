@@ -1,17 +1,9 @@
 import React, {FC, ReactElement} from 'react'
 import { StackExample } from './StackExample';
 import { QueueExample } from './QueueExample';
+import { StackQueueContentProps } from '../Common/types';
 
-export interface StackQueueContentProps {
-  stackOptions: string[];
-  stack: string[];
-  queueOptions: string[];
-  queue: string[];
-  handleStackPush: () => void;
-  handleStackPop: () => void;
-  handleQueuePop: () => void;
-  handleQueuePush: () => void;
-}
+
 
 export const StackQueueContent: FC<StackQueueContentProps> = ({ 
   stackOptions, stack, queueOptions, queue, handleStackPush, handleStackPop, handleQueuePop, handleQueuePush 

@@ -1,10 +1,6 @@
 import React from 'react'
-import {TreeContentProps} from './TreeContent'
-type TreeFunctionalityProps = Partial<TreeContentProps> 
-// {
-//   handleSearchInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
-
-// }
+import { TreeFunctionalityProps } from '../Common/types';
+ 
 export const TreeFunctionality = ({handleSearchInputChange , handleTreeSearch}: TreeFunctionalityProps) => {
   return (
     <div className='tree-functionality'>

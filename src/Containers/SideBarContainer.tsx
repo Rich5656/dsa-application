@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { SideBar } from '../Components/SideBar'
-
-interface SideBarContainterProps {
-  handleDisplaySelection: () => void;
-}
+import { SideBarContainterProps } from '../Common/types';
 
 export const SideBarContainer = ({ handleDisplaySelection }: SideBarContainterProps) => {
   const [ sideBarActive, setSideBarActive ] = useState(false);

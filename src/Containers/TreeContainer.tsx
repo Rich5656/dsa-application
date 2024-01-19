@@ -1,21 +1,8 @@
 import React, { useState, useEffect, useMemo, MouseEvent } from 'react'
 import { TreeContent } from '../Components/TreeContent';
 import { VoidExpression } from 'typescript';
+import { Node } from '../Common/Utils';
 
-export class Node {
-    value: number
-    children: [Node | null, Node | null]
-    style: string
-    leftChild: Node | null;
-    rightChild: Node | null
-    constructor(value: number) {
-      this.value = value;
-      this.style = 'standard'
-      this.children = [null, null]
-      this.leftChild = null;
-      this.rightChild = null;
-    }
-};
 
 export const TreeContainer = () => {
     // memoizing the rootNode so css styles render properly
@@ -68,7 +55,7 @@ export const TreeContainer = () => {
         if (dfs(rootNode, treeSearchInput) === true) {
             setTargetFound(true);
         } else {
-            setTargetFound(false)
+            setTargetFound(false);
         }
     };
   

@@ -1,8 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import { inherits } from 'util';
-import { StackQueueContentProps } from './StackQueueContent';
-
-type StackExampleProps = Partial<StackQueueContentProps>
+import { StackExampleProps } from '../Common/types';
 
 export const StackExample = ({handleStackPush, handleStackPop, stack, stackOptions}: StackExampleProps) => {
   const stackCode = `// items ready to be pushed [${stackOptions}] \nconst stack = [${stack}] \n\n// code to push to the stack:\nstack.push()\n\n// code when you pop from the stack (remove last element of array):\nstack.pop()`

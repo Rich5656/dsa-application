@@ -1,11 +1,7 @@
 import React from 'react';
-import { Node } from '../Containers/TreeContainer';
-import { TreeContentProps } from './TreeContent';
-
-interface NodeDisplayProps {
-    rootNode: Node;
-    targetFound: boolean;
-};
+import { Node } from '../Common/Utils';
+import { TreeContentProps } from '../Common/types';
+import { NodeDisplayProps } from '../Common/types';
 
 
 export const NodeDisplay = ({rootNode}: NodeDisplayProps)  => {

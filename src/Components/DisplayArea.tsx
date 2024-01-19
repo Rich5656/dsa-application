@@ -4,18 +4,7 @@ import { GraphContent } from './GraphContent';
 import { HomeContent } from './HomeContent';
 import { StackQueueContainer } from '../Containers/StackQueueContainer';
 import { TreeContainer } from '../Containers/TreeContainer';
-
-export interface DisplayAreaProps {
-  displaySelection: string;
-}
-
-export interface Components {
-  home: ReactElement;
-  stacksQueues: ReactElement;
-  trees: ReactElement;
-  graphs: ReactElement;
-  linkedLists: null;
-}
+import { Components, DisplayAreaProps } from '../Common/types';
 
 export const DisplayArea: FC<DisplayAreaProps> = ({ displaySelection }: DisplayAreaProps): ReactElement => {
     const components: Components = {

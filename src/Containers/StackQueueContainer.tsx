@@ -1,7 +1,6 @@
 import {FC,  ReactElement,  useState } from 'react'
 import { StackQueueContent } from '../Components/StackQueueContent'
 
-
 export const StackQueueContainer: FC = (): ReactElement => {
   const [ stackOptions, setStackOptions ] = useState<string[] | never[]>(['a' ,'b', 'c', 'd'])
   const [ stack, setStack ] = useState<string[] | never[]>([]);
